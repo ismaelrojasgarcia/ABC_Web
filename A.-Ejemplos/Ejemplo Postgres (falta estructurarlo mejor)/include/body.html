@@ -1,0 +1,56 @@
+<body><h2 align="center">ABC Web</h2>
+<?php
+   include("pg.php");
+   $link=Conectarse();
+		if ($link==0)
+		{
+			echo "<H1>Error en apertura de bases de datos.</H1>";
+			exit();
+		}
+	
+	$result=pg_query($link,"select * from CatalogoEmpleados");
+?>
+
+
+<div align="center">
+	<table align="center">
+		<tr>
+			<td id="tdespacio"><a href="abc.php?accion=alta">Alta</a>
+			<td id="tdespacio"><a href="abc.php?accion=baja">Baja</a>
+			<td id="tdespacio"><a href="abc.php?accion=modificacion">Cambio</a>
+		</tr>
+	</table>
+</div>
+   
+   <!-- Escribimos título de las tablas -->
+   <table align="center" border=1 cellspacing=1 cellpadding=1>
+    <tr>
+		<td><b>&nbsp;NumEmpleado&nbsp;</b></td>
+		<td><b>&nbsp;Nombre&nbsp;</b></td>
+		<td><b>&nbsp;ApellidoPaterno&nbsp;</b></td>
+		<td><b>&nbsp;ApellidoMaterno&nbsp;</b></td>
+		<td><b>&nbsp;Dirección&nbsp;</b></td>
+		<td><b>&nbsp;Centro&nbsp;</b></td>
+		<td><b>&nbsp;CURP&nbsp;</b></td>
+        </tr>
+
+<?php
+   //$row["ID"] NO ES LO MISMO QUE $row["id"] o que $row["Id"]
+   while($row = pg_fetch_row($result)) {
+	  echo "<tr>";
+	  echo "<td>&nbsp;" . $row["0"] . "</td>";
+	  echo "<td>&nbsp;" . $row["1"] . "</td>";
+	  echo "<td>&nbsp;" . $row["2"] . "</td>";
+	  echo "<td>&nbsp;" . $row["3"] . "</td>";
+	  echo "<td>&nbsp;" . $row["4"] . "</td>";
+	  echo "<td>&nbsp;" . $row["5"] . "</td>";
+	  echo "<td>&nbsp;" . $row["6"] . "</td>";
+	  echo "</tr>";
+   }
+   
+   //liberamos memoria que ocupa la consulta...
+   pg_free_result($result);
+   
+   //cerramos la conexión con el motor de BD
+   pg_close($link);
+?>

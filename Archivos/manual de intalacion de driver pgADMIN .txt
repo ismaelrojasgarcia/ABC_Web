@@ -1,0 +1,25 @@
+link: http://yonynet.blogspot.com/2013/11/habilitar-driver-de-postgres-en-xampp.html
+
+Abrir el archivo de configuración de php, el cual se encuentra en el siguiente directorio
+C:\xampp\php\php.ini
+
+Dentro de ese archivo buscar la sección de extensiones y descomenta las siguientes lineas:
+
+extension=php_pdo_pgsql.dll
+extension=php_pgsql.dll
+
+Ahora guardar los cambios realizados en el archivo: php.ini
+
+-De esta manera hemos habilitado que reconozca driver de postgres. Para constatar lo que hemos hecho, realizamos lo siguiente.
+
+-Como se puede observar la esta reconociendo el driver de postgres.
+
+-También debemos tener en cuenta añadir los siguientes archivos:
+
+Buscar en el directorio de instalación de (postgres), bajo \bin los siguientes archivos.
+
+libpq.dll
+libintl.dll
+
+Copiar los archivos anteriores al siguiente directorio
+C:\xampp\apache\bin

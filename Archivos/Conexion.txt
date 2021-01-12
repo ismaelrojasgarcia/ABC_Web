@@ -1,0 +1,17 @@
+SQL
+10.39.130.43
+Controlprog
+230149
+89237d5bfe
+
+Server=10.44.14.39; 
+PWD=xoperacion; 
+DATABASE=ControlProg; 
+UID=operacion;
+
+Postgres
+10.41.246.68 
+port=5432 
+dbname=tienda.0950 
+syscontrolprogramacion 
+f45459f3627a6d7372b261324aa4b574";

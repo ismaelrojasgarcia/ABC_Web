@@ -1,0 +1,15 @@
+table{text-align: center;}
+
+input{width: 300px; height: 20px;}
+
+body{padding: 0px;margin: 0px;background-color:;}
+
+
+#tdespacio{padding: 5px;}
+#margen{padding-bottom: 50px;}
+#margenpie{position:absolute;bottom:5px;right:10px;}
+
+button{width: 100px;}
+
+img {width: 5%;}
+
